@@ -1,0 +1,9 @@
+Manufacturer=Adafruit
+PartNumber=3595
+PartCategory=Integrated Circuit
+PackageCategory=Other
+PinCount=8
+Version=1.3
+Released=2021-06-03 05:45:45
+Downloaded=2025-06-27 00:54:41
+3D=Y

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 3595
+D Position Sensor Development Tools Adafruit APDS9960 Sensor
+K
+F https://cdn-learn.adafruit.com/downloads/pdf/adafruit-apds9960-breakout.pdf
+$ENDCMP
+#
+#End Doc Library

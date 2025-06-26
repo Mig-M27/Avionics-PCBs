@@ -1,0 +1,19 @@
+.3595 :1 ;Position Sensor Development Tools Adafruit APDS9960 Sensor
+"3595"
+*STM IC
+*NGS
+*PNM 1=1 2=2 3=3 4=4 5=5 6=6 7=MH1 8=MH2
+*PLB 1="VIN" 2="3VO" 3="GND" 4="SCL" 5="SDA" 6="INT" 7="MH1" 8="MH2"
+*MXP 8
+*DFN 3595
+~!Manufacturer_Name (Adafruit)
+~!Manufacturer_Part_Number (3595)
+~!Mouser Part Number (485-3595)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Adafruit/3595?qs=0lQeLiL1qyZKgCluEGGJeA%3D%3D)
+~!Arrow Part Number (3595)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/3595/adafruit-industries)
+~!Link Datasheet (https://cdn-learn.adafruit.com/downloads/pdf/adafruit-apds9960-breakout.pdf)
+~!Height (3mm)
+~!3D_Model (3595)
+"3595"
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 

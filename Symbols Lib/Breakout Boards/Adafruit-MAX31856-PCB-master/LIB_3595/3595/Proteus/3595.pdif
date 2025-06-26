@@ -1,0 +1,149 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "3595"
+   (description "Position Sensor Development Tools Adafruit APDS9960 Sensor")
+   (family "ANA")
+   (package "3595")
+   (attribute "Datasheet Link" "https://cdn-learn.adafruit.com/downloads/pdf/adafruit-apds9960-breakout.pdf")
+   (attribute "Geometry.Height" "3mm")
+   (attribute "Manufacturer_Name" "Adafruit")
+   (attribute "Manufacturer_Part_Number" "3595")
+   (attribute "Mouser Part Number" "485-3595")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Adafruit/3595?qs=0lQeLiL1qyZKgCluEGGJeA%3D%3D")
+   (attribute "Arrow Part Number" "3595")
+   (attribute "Arrow Price/Stock" "https://www.arrow.com/en/products/3595/adafruit-industries")
+   (gate
+    (symbol "3595")
+    (pin "VIN" 1 PS)
+    (pin "3VO" 2 PS)
+    (pin "GND" 3 PS)
+    (pin "SCL" 4 PS)
+    (pin "SDA" 5 PS)
+    (pin "INT" 6 PS)
+    (pin "MH1" MH1 PS)
+    (pin "MH2" MH2 PS)
+   )
+  )
+  (symbol "3595"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 800 100) (pt 800 -600) (pt 200 -600) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1000 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1000 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "3595"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.54 15.24)
+      (pt 15.24 15.24)
+      (pt 15.24 -2.54)
+      (pt -2.54 -2.54)
+      (pt -2.54 15.24))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -2.54 15.24)
+      (pt 15.24 15.24)
+      (pt 15.24 -2.54)
+      (pt -2.54 -2.54)
+      (pt -2.54 15.24))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.54 16.24)
+      (pt 16.24 16.24)
+      (pt 16.24 -3.54)
+      (pt -3.54 -3.54)
+      (pt -3.54 16.24))))
+   (leg 1 (pt 0.000 0.000) (padstack 0))
+   (leg 2 (pt 2.540 0.000) (padstack 0))
+   (leg 3 (pt 5.080 0.000) (padstack 0))
+   (leg 4 (pt 7.620 0.000) (padstack 0))
+   (leg 5 (pt 10.160 0.000) (padstack 0))
+   (leg 6 (pt 12.700 0.000) (padstack 0))
+   (leg MH1 (pt 0.000 12.700) (padstack 7))
+   (leg MH2 (pt 12.700 12.700) (padstack 8))
+   (padstack 0
+    (hole 1.11)
+    (plated true)
+    (pad (layer TCOP) (round 1.665))
+    (pad (layer INNER) (round 1.665))
+    (pad (layer BCOP) (round 1.665))
+   )
+   (padstack 7
+    (hole 2.54)
+    (plated true)
+    (pad (layer TCOP) (round 3.810))
+    (pad (layer INNER) (round 3.810))
+    (pad (layer BCOP) (round 3.810))
+   )
+   (padstack 8
+    (hole 2.54)
+    (plated true)
+    (pad (layer TCOP) (round 3.810))
+    (pad (layer INNER) (round 3.810))
+    (pad (layer BCOP) (round 3.810))
+   )
+   (model "3595.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)
