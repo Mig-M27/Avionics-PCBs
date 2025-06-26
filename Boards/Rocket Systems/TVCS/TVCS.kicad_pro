@@ -63,16 +63,19 @@
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
         "courtyards_overlap": "error",
+        "creepage": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
+        "footprint_filters_mismatch": "ignore",
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "hole_to_hole": "error",
         "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
@@ -83,9 +86,11 @@
         "lib_footprint_mismatch": "warning",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
+        "mirrored_text_on_front_layer": "warning",
         "missing_courtyard": "ignore",
         "missing_footprint": "warning",
         "net_conflict": "warning",
+        "nonmirrored_text_on_back_layer": "warning",
         "npth_inside_courtyard": "ignore",
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
@@ -100,7 +105,9 @@
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
+        "track_angle": "error",
         "track_dangling": "warning",
+        "track_segment_length": "error",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
@@ -113,6 +120,7 @@
         "min_clearance": 0.0,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
+        "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
@@ -130,10 +138,11 @@
       },
       "teardrop_options": [
         {
-          "td_onpadsmd": true,
+          "td_onpthpad": true,
           "td_onroundshapesonly": false,
+          "td_onsmdpad": true,
           "td_ontrackend": false,
-          "td_onviapad": true
+          "td_onvia": true
         }
       ],
       "teardrop_parameters": [
@@ -208,6 +217,7 @@
       "mfg": "",
       "mpn": ""
     },
+    "layer_pairs": [],
     "layer_presets": [],
     "viewports": []
   },
@@ -402,10 +412,15 @@
       "duplicate_sheet_names": "error",
       "endpoint_off_grid": "warning",
       "extra_units": "error",
+      "footprint_filter": "ignore",
+      "footprint_link_issues": "warning",
+      "four_way_junction": "ignore",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
+      "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
+      "lib_symbol_mismatch": "warning",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
@@ -416,11 +431,16 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
+      "same_local_global_label": "warning",
+      "similar_label_and_power": "warning",
       "similar_labels": "warning",
+      "similar_power": "warning",
       "simulation_model_issue": "ignore",
+      "single_global_label": "ignore",
       "unannotated": "error",
+      "unconnected_wire_endpoint": "warning",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -431,8 +451,8 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "TVCS Top.kicad_pro",
-    "version": 1
+    "filename": "TVCS.kicad_pro",
+    "version": 3
   },
   "net_settings": {
     "classes": [
@@ -447,19 +467,201 @@
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "name": "12V",
+        "pcb_color": "rgb(255, 0, 0)",
+        "priority": 8,
+        "schematic_color": "rgb(255, 4, 20)"
+      },
+      {
+        "name": "2V5",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 4,
+        "schematic_color": "rgb(169, 240, 0)"
+      },
+      {
+        "name": "3V3",
+        "pcb_color": "rgb(255, 255, 0)",
+        "priority": 5,
+        "schematic_color": "rgb(217, 255, 5)"
+      },
+      {
+        "name": "5V",
+        "pcb_color": "rgb(194, 194, 0)",
+        "priority": 6,
+        "schematic_color": "rgb(222, 177, 47)"
+      },
+      {
+        "name": "8V4",
+        "pcb_color": "rgb(255, 153, 0)",
+        "priority": 7,
+        "schematic_color": "rgb(255, 155, 65)"
+      },
+      {
+        "name": "Analog",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgb(226, 0, 255)"
+      },
+      {
+        "name": "Differential",
+        "pcb_color": "rgb(194, 194, 194)",
+        "priority": 2,
+        "schematic_color": "rgb(255, 116, 224)"
+      },
+      {
+        "name": "Digital",
+        "pcb_color": "rgb(132, 0, 132)",
+        "priority": 10,
+        "schematic_color": "rgb(43, 255, 182)"
+      },
+      {
+        "name": "GND",
+        "pcb_color": "rgb(0, 0, 194)",
+        "priority": 3,
+        "schematic_color": "rgb(0, 0, 255)"
+      },
+      {
+        "name": "GNDA",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgb(82, 34, 255)"
+      },
+      {
+        "name": "I2C",
+        "pcb_color": "rgb(0, 255, 255)",
+        "priority": 12,
+        "schematic_color": "rgb(39, 200, 210)"
+      },
+      {
+        "name": "POWER",
+        "pcb_color": "rgb(132, 0, 0)",
+        "priority": 9,
+        "schematic_color": "rgb(165, 64, 47)"
+      },
+      {
+        "name": "SPI",
+        "pcb_color": "rgb(0, 194, 194)",
+        "priority": 13,
+        "schematic_color": "rgb(0, 119, 194)"
+      },
+      {
+        "name": "UART",
+        "pcb_color": "rgb(0, 194, 0)",
+        "priority": 11,
+        "schematic_color": "rgb(0, 216, 175)"
       }
     ],
     "meta": {
-      "version": 3
+      "version": 4
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Differential",
+        "pattern": "*DN"
+      },
+      {
+        "netclass": "Differential",
+        "pattern": "*DP"
+      },
+      {
+        "netclass": "Differential",
+        "pattern": "*+"
+      },
+      {
+        "netclass": "Differential",
+        "pattern": "*-"
+      },
+      {
+        "netclass": "Analog",
+        "pattern": "*Sense"
+      },
+      {
+        "netclass": "3V3",
+        "pattern": "+3.3V"
+      },
+      {
+        "netclass": "5V",
+        "pattern": "+5V"
+      },
+      {
+        "netclass": "8V4",
+        "pattern": "+8.4V"
+      },
+      {
+        "netclass": "12V",
+        "pattern": "+12V"
+      },
+      {
+        "netclass": "POWER",
+        "pattern": "VBUS"
+      },
+      {
+        "netclass": "POWER",
+        "pattern": "VBAT"
+      },
+      {
+        "netclass": "POWER",
+        "pattern": "VDC"
+      },
+      {
+        "netclass": "SPI",
+        "pattern": "*SPI"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "*THERMO"
+      },
+      {
+        "netclass": "GND",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "UART",
+        "pattern": "*RS"
+      },
+      {
+        "netclass": "I2C",
+        "pattern": "*I2C"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "*Status"
+      },
+      {
+        "netclass": "POWER",
+        "pattern": "*Valve"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "*PWM"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "*Enable"
+      },
+      {
+        "netclass": "Digital",
+        "pattern": "*USB-C"
+      },
+      {
+        "netclass": "2V5",
+        "pattern": "*2.5V"
+      },
+      {
+        "netclass": "GNDA",
+        "pattern": "*GNDA"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -645,6 +847,7 @@
       ],
       "filter_string": "",
       "group_symbols": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
@@ -678,7 +881,8 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "./",
+    "plot_directory": "../../../../../Esquemas/",
+    "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -696,6 +900,14 @@
     [
       "10f1de56-07bf-4172-ae82-8a448f5612d1",
       "RP2040 Standard"
+    ],
+    [
+      "2cbeb4b4-96df-4eba-affc-b7f2c346466c",
+      "Sensor Unit"
+    ],
+    [
+      "1d3e1938-2181-482b-a6e3-3e03c94a0c3c",
+      "Power Unit"
     ]
   ],
   "text_variables": {}
